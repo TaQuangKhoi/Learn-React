@@ -7,7 +7,11 @@ export default function Board({xIsNext, squares, onPlay}) {
     const winner = calculateWinner(squares);
     let status;
     if (winner) {
-        status = "Winner: " + winner;
+        if (winner === "Draw") {
+            status = "Draw";
+        } else {
+            status = "Winner: " + winner;
+        }
     } else {
         status = "Next player: " + (xIsNext ? "X" : "O");
     }
@@ -59,6 +63,11 @@ export default function Board({xIsNext, squares, onPlay}) {
                 winLine = lines[i];
                 return squares[a];
             }
+        }
+
+        // when no one wins, display a message about the result being a draw
+        if (squares.every((square) => square !== null)) {
+            return "Draw";
         }
         return null;
     }
