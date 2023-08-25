@@ -1,5 +1,5 @@
-import Board from "./Board";
+import Game from "./Game";
 
 export default function App() {
-  return <Board />;
+  return <Game />;
 }

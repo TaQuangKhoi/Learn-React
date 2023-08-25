@@ -1,7 +1,5 @@
 export default function Square({value, onSquareClick}) {
-
     function handleClick() {
-        console.log("clicked : ", value);
         onSquareClick();
     }
 
